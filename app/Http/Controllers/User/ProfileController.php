@@ -26,7 +26,19 @@ class ProfileController extends Controller
         $profile->lastname = $request->lastname;
         $profile->email = $request->email;
         $profile->password = $request->password;
+
         $profile->save();
+
+        // dd($user);
+        // dd($profile);
+
+        // $profile = new User();
+        // $profile->name = $request->name;
+        // $profile->firstname = $request->firstname;
+        // $profile->lastname = $request->lastname;
+        // $profile->email = $request->email;
+        // $profile->password = $request->password;
+        // $profile->save();
 
         return view('home');
     }
