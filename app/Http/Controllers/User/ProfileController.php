@@ -18,7 +18,9 @@ class ProfileController extends Controller
     }
     public function sendProfile(Request $request)
     {
-        $profile = new User();
+        $id = auth()->id();
+        $profile = User::find($id);
+
         $profile->name = $request->name;
         $profile->firstname = $request->firstname;
         $profile->lastname = $request->lastname;
