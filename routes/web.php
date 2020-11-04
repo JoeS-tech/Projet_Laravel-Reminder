@@ -23,4 +23,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Route::post('/form', 'Form\FormController@store')->name('form.store');
 
 Route::get('/profile', 'User\ProfileController@profile')->name('user.profile');
+Route::post('/profile', 'User\ProfileController@sendProfile')->name('user.sendProfile');
 Route::get('/postit', 'User\PostitController@postit')->name('user.postit');
