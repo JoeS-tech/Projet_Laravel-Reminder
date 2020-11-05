@@ -17,7 +17,7 @@
     <br>
     <span>Email: {{Auth::user()->email}}</span>
 
-
+    <button v-onclick="window.location.href='{{@route('user.sendProfile')}}'">Modifiez votre Profil</button>
 </div>
 
 <form method="POST" action="{{ @route('user.sendProfile') }}" enctype="multipart/form-data">
