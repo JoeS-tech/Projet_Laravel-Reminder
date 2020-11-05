@@ -16,9 +16,19 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                   <h2> Vous êtes connecté en tant que {{ Auth::user()->name }} ! </h2>
                 </div>
-                <button onclick="window.location.href='{{@route('user.profile')}}'">Modifiez votre Profile</button>
+                <div class="card-body">
+                    <span>Nom: {{Auth::user()->name}}</span>
+                    <br>
+                    @if(Auth::user()->firstname === NULL)
+                    @else
+                    Prénom: {{Auth::user()->firstname}}
+                    <br>
+                    @endif
+                    <span>Email: {{Auth::user()->email}}</span>
+                </div>
+                <button onclick="window.location.href='{{@route('user.profile')}}'">Modifiez votre Profil</button>
             </div>
         </div>
     </div>
