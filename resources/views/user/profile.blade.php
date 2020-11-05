@@ -17,7 +17,8 @@
     <br>
     <span>Email: {{Auth::user()->email}}</span>
 
-
+{{-- @if("isset" ) --}}
+    <input type="button" name="cmd" value="Modifiez votre Profil">
 </div>
 
 <form method="POST" action="{{ @route('user.sendProfile') }}" enctype="multipart/form-data">
@@ -34,16 +35,16 @@
     <input type="text" name="name" id="name" value="{{Auth::user()->name}}">
     <br>
     <label for="email">Entrez votre email: </label>
-    <input type="text" name="email" id="email">
+    <input type="text" name="email" id="email" value="{{Auth::user()->email}}">
     <br>
     <label for="firstname">Entrez votre prénom: </label>
-    <input type="text" name="firstname" id="firstname">
+    <input type="text" name="firstname" id="firstname" placeholder="prénom">
     <br>
     <label for="lastname">Entrez votre nom: </label>
-    <input type="text" name="lastname" id="lastname">
+    <input type="text" name="lastname" id="lastname" placeholder="nom">
     <br>
     <label for="password">Entrez un nouveau mot de passe: </label>
-    <input type="password" name="password" id="password">
+    <input type="password" name="password" id="password" placeholder="mot de passe">
     <br>
     <input type="submit" value="Valider">
 
