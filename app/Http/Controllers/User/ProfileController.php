@@ -49,6 +49,6 @@ class ProfileController extends Controller
         // $profile->password = $request->password;
         // $profile->save();
 
-        return view('home');
+        return view('welcome');
     }
 }
