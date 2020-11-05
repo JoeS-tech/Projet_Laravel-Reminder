@@ -2,9 +2,22 @@
 @section('content')
 
 <div class="card-body">
+
+    @if(Auth::user()->lastname ==NULL && Auth::user()->firstname ==NULL)
+        Saisissez votre nom et prénom
+        <br>
+        @else
+        <span>Prénom: {{Auth::user()->firstname}} </span>
+        <br>
+        <span>Nom: {{Auth::user()->lastname}} </span>
+        <br>
+    @endif
+
     <span>Username: {{Auth::user()->name}}</span>
     <br>
     <span>Email: {{Auth::user()->email}}</span>
+
+
 </div>
 
 <form method="POST" action="{{ @route('user.sendProfile') }}" enctype="multipart/form-data">
