@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 class ProfileController extends Controller
 {
@@ -20,6 +21,14 @@ class ProfileController extends Controller
     {
         $id = auth()->id();
         $profile = User::find($id);
+
+        $avatar = $request->avatar;
+
+        if (($avatarPath = $avatar->store('public/assets/uploads'))) {
+            $profile->avatar = $avatarPath;
+        } else {
+            $profile->avatar = '';
+        }
 
         $profile->name = $request->name;
         $profile->firstname = $request->firstname;

@@ -90,7 +90,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Reminder
                 </div>
 
                 <div class="links">

@@ -1,13 +1,16 @@
 @extends('layouts.app')
 @section('content')
 
-<form method="POST" action="{{ @route('user.sendProfile') }}">
+<form method="POST" action="{{ @route('user.sendProfile') }}" enctype="multipart/form-data">
     @if($errors->any()) {{-- si il y a une erreur...--}}
         @foreach($errors->all() as $e) {{-- --}}
             <h3 class="red-text">{{ $e }}</h3>
         @endforeach
     @endif
     @csrf
+    <label for="file">Séléctionnez votre avatar! </label>
+    <input type="file" name="avatar" id="file">
+    <br>
     <label for="name">Entrez un nouveau pseudo: </label>
     <input type="text" name="name" id="name">
     <br>

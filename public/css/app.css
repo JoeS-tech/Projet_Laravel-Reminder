@@ -10903,3 +10903,7 @@ a.text-dark:focus {
   }
 }
 
+.log_card {
+    border-radius: 0 0 0 0;
+    border: 1px solid;
+}
