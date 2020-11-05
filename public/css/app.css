@@ -10908,3 +10908,8 @@ a.text-dark:focus {
     border-radius: 0 0 0 0;
     border: 1px solid;
 }
+
+/* ma page profile */
+.card_profile {
+    background-color: lightcyan;
+}
