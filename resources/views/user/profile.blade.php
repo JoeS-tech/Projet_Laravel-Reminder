@@ -31,7 +31,7 @@
     <input type="file" name="avatar" id="file">
     <br>
     <label for="name">Entrez un nouveau pseudo: </label>
-    <input type="text" name="name" id="name">
+    <input type="text" name="name" id="name" value="{{Auth::user()->name}}">
     <br>
     <label for="email">Entrez votre email: </label>
     <input type="text" name="email" id="email">
