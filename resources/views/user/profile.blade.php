@@ -1,6 +1,12 @@
 @extends('layouts.app')
 @section('content')
 
+<div class="card-body">
+    <span>Username: {{Auth::user()->name}}</span>
+    <br>
+    <span>Email: {{Auth::user()->email}}</span>
+</div>
+
 <form method="POST" action="{{ @route('user.sendProfile') }}" enctype="multipart/form-data">
     @if($errors->any()) {{-- si il y a une erreur...--}}
         @foreach($errors->all() as $e) {{-- --}}

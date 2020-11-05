@@ -18,13 +18,6 @@
 
                     You are logged in!
                 </div>
-                <div class="card-body">
-                    <span>Nom: {{Auth::user()->name}}</span>
-                    <br>
-                    <span>Prénom: {{Auth::user()->firstname}}</span>
-                    <br>
-                    <span>Email: {{Auth::user()->email}}</span>
-                </div>
                 <button onclick="window.location.href='{{@route('user.profile')}}'">Modifiez votre Profile</button>
             </div>
         </div>
