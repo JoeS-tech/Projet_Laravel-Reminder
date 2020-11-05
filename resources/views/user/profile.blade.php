@@ -2,6 +2,7 @@
 @section('content')
 
 <div class="card-body text-center">
+    <div class="card_profile">
 
     @if(Auth::user()->lastname ==NULL && Auth::user()->firstname ==NULL)
         <h2>Bonjour!</h2>
@@ -55,6 +56,7 @@
 
     </form>
   </div>
+</div>
 </div>
 
 @endsection
