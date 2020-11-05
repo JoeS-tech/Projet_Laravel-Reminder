@@ -25,4 +25,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'User\ProfileController@profile')->name('user.profile');
 Route::post('/profile', 'User\ProfileController@sendProfile')->name('user.sendProfile');
 Route::get('/postit', 'User\PostitController@postit')->name('user.postit');
-Route::get('/dashboard/{user_id}', 'User\DashboardController@dashboard')->name('user.dashboard');
+Route::get('/dashboard/{id}', 'User\DashboardController@dashboard')->name('user.dashboard');

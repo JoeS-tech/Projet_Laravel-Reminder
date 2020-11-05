@@ -8,6 +8,7 @@
             <a href="{{ @route('user.postit') }}">Accéder à vos Post-it</a>
             <div class="card">
                 <div class="card-header">Dashboard</div>
+                <a href="{{ @route('user.dashboard') }}">Dash</a>
 
                 <div class="card-body">
                     @if (session('status'))
