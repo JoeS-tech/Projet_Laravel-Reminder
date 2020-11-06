@@ -36,10 +36,10 @@ class DashboardController extends Controller
         $id = auth()->user();
         $table = Table::all();
         $table = new table;
-        $table->user_id = $request->user_id;
+        $table->title = $request->title;
 
         $table->save();
 
-        return view('home');
+        return view('user.dashboard', ['tables' => table::all()]);
     }
 }
