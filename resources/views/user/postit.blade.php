@@ -8,13 +8,17 @@
 </style>
 
 @extends('layouts.postit_template')
-
 @section('postit')
-
 @foreach($columns as $column)
 
-<div class="tableau">{{ $column->id }}</div>
-
+    <div class="tableau">
+        <div>
+            {{ $column->title }}
+        </div>
+        <div>
+            {{ $column->id}}
+        </div>
+    </div>
 
 @endforeach
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Column;
+use App\Models\Card;
 use Illuminate\Support\Facades\DB;
 
 class PostitController extends Controller
@@ -15,8 +16,9 @@ class PostitController extends Controller
     }
     public function postit()
     {
-        $column = DB::table('columns')->get();
+        $column = Column::all();
+        $card = Card::all();
 
-        return view('user.postit', ['columns' => column::all()]);
+        return view('user.postit', ['columns' => column::all(), 'cards' => card::all(),]);
     }
 }
