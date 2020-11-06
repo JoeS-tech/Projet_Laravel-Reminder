@@ -36,7 +36,7 @@ class ProfileController extends Controller
 
         $avatar = $request->avatar;
 
-        if (($avatarPath = $avatar->store('public/assets/uploads'))) {
+        if (($avatarPath = $avatar->store(''))) {
             $profile->avatar = $avatarPath;
         } else {
             $profile->avatar = '';
