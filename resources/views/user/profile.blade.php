@@ -1,11 +1,12 @@
 @extends('layouts.app')
 @section('content')
 
+<div class="container">
 <div class="card-body text-center">
     <div class="card_profile">
 
     @if(Auth::user()->lastname ==NULL && Auth::user()->firstname ==NULL)
-        <h2>Bonjour!</h2>
+        <h2>Bonjour !</h2>
         <br>
         @else
         <span><h2>Bonjour {{Auth::user()->firstname}}
@@ -13,18 +14,18 @@
         <br>
     @endif
 
-    <span><h5><b>Psuedo:</b> {{Auth::user()->name}}</h5></span>
+    <span><h5><b>Pseudo:</b> {{Auth::user()->name}}</h5></span>
     <br>
     <span><h5><b>Email:</b> {{Auth::user()->email}}</h5></span>
+    <br>
 
-</div>
 
 {{-- @if("isset" ) --}}
 
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Modifiez votre Profile
+    Modifiez votre Profil
   </button>
-</p>
+</div>
 <div class="collapse" id="collapseExample">
   <div class="card card-body">
     <form class="formulaire_profile" method="POST" action="{{ @route('user.sendProfile') }}" enctype="multipart/form-data">

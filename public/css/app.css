@@ -10912,4 +10912,6 @@ a.text-dark:focus {
 /* ma page profile */
 .card_profile {
     background-color: lightcyan;
+    border-radius: 20px;
+    border: solid 2px;
 }

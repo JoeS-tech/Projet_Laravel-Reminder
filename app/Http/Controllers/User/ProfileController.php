@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -21,6 +22,18 @@ class ProfileController extends Controller
     {
         $id = auth()->id();
         $profile = User::find($id);
+
+        $request->validate(
+            [
+                'name' => 'required|string|alpha|min:2',
+                'firstname' => 'string|alpha|min:2',
+                'lastname' => 'string|alpha|min:2',
+                'email' => 'required|email|max:60',
+                'password' => 'required|min:8',
+                // 'password' => Hash::make($data['password']),
+                'avatar' => 'mimes:jpg,jpeg,png',
+            ]
+        );
 
         $avatar = $request->avatar;
 
