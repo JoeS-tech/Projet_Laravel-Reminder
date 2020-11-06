@@ -1,6 +1,9 @@
 <style>
     .tableau{
         border: 2px black solid;
+        width: 25%;
+        height: 250px;
+        background-color:red;
     }
 </style>
 
@@ -9,10 +12,12 @@
 @section('postit')
 
 @foreach($columns as $column)
+
 <div class="tableau">{{ $column->id }}</div>
+
+
 @endforeach
 
 @endsection
-Pas hellow :
 
 

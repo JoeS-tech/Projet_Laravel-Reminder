@@ -4,14 +4,14 @@
   Hellow Darkness my old friend :
 <form method="POST" action="{{ @route('user.sendTable') }}">
     @csrf
-    <input type="number" name="user_id">
+    <input type="text" name="title">
     <input type="submit" value="Envoyer">
 </form>
 
 <table>
     @foreach ($tables as $table)
         <div>
-        <a href="{{ @route('user.postit',[$table->id]) }}">{{ $table->user_id }}<br></a>
+        <a href="{{ @route('user.postit',[$table->id]) }}">{{ $table->title }}<br></a>
             {{ $table->id }}
         </div>
         <tr>
