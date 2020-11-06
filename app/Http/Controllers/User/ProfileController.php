@@ -25,12 +25,11 @@ class ProfileController extends Controller
 
         $request->validate(
             [
-                'name' => 'required|string|alpha|min:2',
+                'name' => 'required|string|min:2',
                 'firstname' => 'string|alpha|min:2',
-                'lastname' => 'string|alpha|min:2',
+                'lastname' => 'string|alpha|min:1',
                 'email' => 'required|email|max:60',
                 'password' => 'required|min:8',
-                // 'password' => Hash::make($data['password']),
                 'avatar' => 'mimes:jpg,jpeg,png',
             ]
         );
@@ -48,6 +47,7 @@ class ProfileController extends Controller
         $profile->lastname = $request->lastname;
         $profile->email = $request->email;
         $profile->password = $request->password;
+        $profile->password = Hash::make('password');
 
         $profile->save();
 
