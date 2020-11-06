@@ -21,8 +21,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Route::get('/form', 'Form\FormController@form')->Middleware('auth')->name('form');
 // Route::post('/form', 'Form\FormController@store')->name('form.store');
-
+// Route profile
 Route::get('/profile', 'User\ProfileController@profile')->name('user.profile');
 Route::post('/profile', 'User\ProfileController@sendProfile')->name('user.sendProfile');
-Route::get('/postit', 'User\PostitController@postit')->name('user.postit');
-Route::get('/dashboard/{user_id}', 'User\DashboardController@dashboard')->name('user.dashboard');
+
+//route dashboard = home
+Route::get('/dashboard', 'User\DashboardController@dashboard')->name('user.dashboard');
+Route::post('/dashboard', 'User\DashboardController@sendTable')->name('user.sendTable');
+
+
+// Route postit
+Route::get('/postit/{id_tables}', 'User\PostitController@postit')->name('user.postit');
