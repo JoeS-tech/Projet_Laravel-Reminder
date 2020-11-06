@@ -44,8 +44,6 @@ class ProfileController extends Controller
             } else {
                 $profile->avatar = '';
             }
-        } else {
-            $profile->avatar = '';
         }
 
         if ($request->name) {
