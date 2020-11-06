@@ -46,7 +46,7 @@
 
         <label for="file" class="col-md-4 col-form-label text-md-right">Séléctionnez votre avatar! </label>
         <input type="file" name="avatar"  id="file">
-        <input type='hidden' name="avatar" value = "{{Auth::user()->avatar}}" id='file'>
+
         <br>
         <label for="name" class="col-md-4 col-form-label text-md-right">Entrez un nouveau pseudo: </label>
         <input type="text" name="name" id="name" value="{{Auth::user()->name}}">

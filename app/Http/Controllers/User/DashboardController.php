@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Table;
-use Illuminate\Support\Facades\DB;
+use App\Models\Column;
+
 
 // use App\Models\User;
 
@@ -27,7 +28,13 @@ class DashboardController extends Controller
         // $id = User::find($id);
         // $id = $id->id;
         // // dd($id);
-        return view('user.dashboard', ['tables' => Table::where('user_id', Auth::user()->id)->get()]);
+        return view(
+            'user.dashboard',
+            [
+                'tables' => Table::where('user_id', Auth::user()->id)->get(),
+                'columns' => Column::where('table_id', Auth::user()->id)->get(),
+            ]
+        );
     }
 
 
