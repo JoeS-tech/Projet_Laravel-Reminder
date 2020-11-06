@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Column;
 use App\Models\Card;
+use App\Models\Table;
 use Illuminate\Support\Facades\DB;
 
 class PostitController extends Controller
@@ -20,16 +21,22 @@ class PostitController extends Controller
         $column = Column::all();
         $card = Card::all();
 
-        return view('user.postit', ['columns' => column::all(), 'cards' => card::all(),]);
+        return view('user.postit', [
+            'columns' => Column::where('table_id', Auth::user()->id)->get(),
+        ]);
     }
     public function addCol(Request $request)
     {
         $user = auth()->user();
 
-        $table = new Column;
-        $table->title = $request->title;
-        $table->table_id = $user->id;
-        $table->save();
+        $columnId = Table::where('user_id', Auth::user()->id)->value('user_id');
+
+        $column = new Column;
+        $column->title = $request->title;
+        $column->user_id = $user->id;
+        $column->table_id = $columnId;
+
+        $column->save();
 
 
         return view('user.postit', ['columns' => Column::where('table_id', Auth::user()->id)->get(),]);
