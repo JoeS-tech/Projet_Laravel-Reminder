@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <a href="{{ @route('user.profile') }}">Modifier le profil</a>
-            <a href="{{ @route('user.postit') }}">Accéder à vos Post-it</a>
+
             <div class="card">
                 <div class="card-header">Dashboard</div>
                 <a href="{{ @route('user.dashboard') }}">Dash</a>
