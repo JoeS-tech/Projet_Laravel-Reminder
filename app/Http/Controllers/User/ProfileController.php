@@ -25,12 +25,12 @@ class ProfileController extends Controller
 
         $request->validate(
             [
-                'name' => 'required|string|min:2',
-                'firstname' => 'string|alpha|min:2',
-                'lastname' => 'string|alpha',
-                'email' => 'required|email|max:60',
-                'password' => 'required|min:8',
-                'avatar' => 'mimes:jpg,jpeg,png',
+                'name' => 'nullable|string|min:2',
+                'firstname' => 'nullable|string|alpha|min:2',
+                'lastname' => 'nullable|string|alpha',
+                'email' => 'nullable|email|max:60',
+                'password' => 'nullable|min:8',
+                'avatar' => 'nullable|mimes:jpg,jpeg,png',
             ]
         );
 
@@ -41,13 +41,18 @@ class ProfileController extends Controller
         } else {
             $profile->avatar = '';
         }
-
-        $profile->name = $request->name;
-        $profile->firstname = $request->firstname;
-        $profile->lastname = $request->lastname;
-        $profile->email = $request->email;
-        $profile->password = $request->password;
-        $profile->password = Hash::make('password');
+        if ($request->name) {
+            $profile->name = $request->name;
+        }
+        if ($request->name) {
+            $profile->firstname = $request->firstname;
+        }
+        if ($request->name) {
+            $profile->email = $request->email;
+        }
+        if ($request->name) {
+            $profile->password = Hash::make($request->password);
+        }
 
         $profile->save();
 

@@ -35,29 +35,28 @@
             @endforeach
         @endif
         @csrf
-        <label for="file">Séléctionnez votre avatar! </label>
+        <label for="file" class="col-md-4 col-form-label text-md-right">Séléctionnez votre avatar! </label>
         <input type="file" name="avatar" id="file">
         <br>
-        <label for="name">Entrez un nouveau pseudo: </label>
+        <label for="name" class="col-md-4 col-form-label text-md-right">Entrez un nouveau pseudo: </label>
         <input type="text" name="name" id="name" value="{{Auth::user()->name}}">
         <br>
-        <label for="email">Entrez votre email: </label>
+        <label for="email" class="col-md-4 col-form-label text-md-right">Entrez votre email: </label>
         <input type="text" name="email" id="email" value="{{Auth::user()->email}}">
         <br>
-        <label for="firstname">Entrez votre prénom: </label>
+        <label for="firstname" class="col-md-4 col-form-label text-md-right">Entrez votre prénom: </label>
         <input type="text" name="firstname" id="firstname" placeholder="prénom">
         <br>
-        <label for="lastname">Entrez votre nom: </label>
+        <label for="lastname" class="col-md-4 col-form-label text-md-right">Entrez votre nom: </label>
         <input type="text" name="name" id="lastname" placeholder="nom">
         <br>
-        <label for="password">Entrez un nouveau mot de passe: </label>
+        <label for="password" class="col-md-4 col-form-label text-md-right">Entrez un nouveau mot de passe: </label>
         <input type="password" name="password" id="password" placeholder="mot de passe">
         <br>
-        <label for="password">Confirmez mot de passe: </label>
+        <label for="password" class="col-md-4 col-form-label text-md-right">Confirmez mot de passe: </label>
         <input type="password" name="password" id="password" placeholder="mot de passe">
         <br>
         <input type="submit" value="Valider">
-
     </form>
   </div>
 </div>
