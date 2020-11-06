@@ -7,14 +7,22 @@
     <input type="number" name="user_id">
     <input type="submit" value="Envoyer">
 </form>
+
 <table>
-    <tr>
-        <td>
-            @foreach ($tables as $table)
-                <li>{{ $table->user_id }}</li>
-            @endforeach
-        </td>
-    </tr>
+    @foreach ($tables as $table)
+        <div>
+        <a href="{{ @route('user.postit',[$table->id]) }}">{{ $table->user_id }}<br></a>
+            {{ $table->id }}
+        </div>
+        <tr>
+            <ul></ul>
+        </tr>
+        <tr>
+            <td>
+                <ul></ul>
+            </td>
+        </tr>
+    @endforeach
 </table>
 
 @endsection

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Column;
+use Illuminate\Support\Facades\DB;
 
 class PostitController extends Controller
 {
@@ -13,6 +15,8 @@ class PostitController extends Controller
     }
     public function postit()
     {
-        return view('user.postit');
+        $column = DB::table('columns')->get();
+
+        return view('user.postit', ['columns' => column::all()]);
     }
 }
