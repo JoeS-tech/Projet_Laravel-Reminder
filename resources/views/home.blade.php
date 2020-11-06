@@ -5,7 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <a href="{{ @route('user.profile') }}">Modifier le profil</a>
+<<<<<<< HEAD
 
+=======
+>>>>>>> b9fab71a584da914fd9143e9ab106a46a8336519
             <div class="card">
                 <div class="card-header">Dashboard</div>
                 <a href="{{ @route('user.dashboard') }}">Dash</a>
