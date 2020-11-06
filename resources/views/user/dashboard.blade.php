@@ -7,10 +7,14 @@
     <input type="number" name="user_id">
     <input type="submit" value="Envoyer">
 </form>
-
-@foreach ($tables as $table)
-    <li>{{ $table->user_id }}</li>
-@endforeach
-
+<table>
+    <tr>
+        <td>
+            @foreach ($tables as $table)
+                <li>{{ $table->user_id }}</li>
+            @endforeach
+        </td>
+    </tr>
+</table>
 
 @endsection
