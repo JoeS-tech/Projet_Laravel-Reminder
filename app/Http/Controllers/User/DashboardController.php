@@ -20,26 +20,26 @@ class DashboardController extends Controller
     public function dashboard(Request $request)
     {
 
-        $table = DB::table('tables')->get();
+        // $table = DB::table('tables')->get();
 
         // dd($table);
         // $id = auth()->id();
         // $id = User::find($id);
         // $id = $id->id;
         // // dd($id);
-        return view('user.dashboard', ['tables' => table::all()]);
+        return view('user.dashboard', ['tables' => Table::where('user_id', Auth::user()->id)->get()]);
     }
 
 
     public function sendTable(Request $request)
     {
-        $id = auth()->user();
-        $table = Table::all();
-        $table = new table;
-        $table->user_id = $request->user_id;
+        $user = auth()->user();
+        $table = new Table;
+        $table->title = $request->title;
+        $table->user_id = $user->id;
 
         $table->save();
 
-        return view('home');
+        return view('user.dashboard', ['tables' => Table::all()]);
     }
 }
