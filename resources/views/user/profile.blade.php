@@ -53,6 +53,9 @@
         <label for="password">Entrez un nouveau mot de passe: </label>
         <input type="password" name="password" id="password" placeholder="mot de passe">
         <br>
+        <label for="password">Confirmez mot de passe: </label>
+        <input type="password" name="password" id="password" placeholder="mot de passe">
+        <br>
         <input type="submit" value="Valider">
 
     </form>

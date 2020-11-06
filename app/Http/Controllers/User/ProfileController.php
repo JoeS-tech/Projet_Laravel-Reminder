@@ -27,7 +27,7 @@ class ProfileController extends Controller
             [
                 'name' => 'required|string|min:2',
                 'firstname' => 'string|alpha|min:2',
-                'lastname' => 'string|alpha|min:1',
+                'lastname' => 'string|alpha',
                 'email' => 'required|email|max:60',
                 'password' => 'required|min:8',
                 'avatar' => 'mimes:jpg,jpeg,png',
