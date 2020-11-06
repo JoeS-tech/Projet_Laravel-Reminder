@@ -1,3 +1,11 @@
+<style>
+    .log_card {
+    background-color: lightcyan;
+    border-radius: 20px;
+    border: solid 2px;
+}
+</style>
+
 @extends('layouts.app')
 
 
