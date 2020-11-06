@@ -19,26 +19,31 @@ class PostitController extends Controller
     {
         $column = Column::all();
         $card = Card::all();
-        return view(
-            'user.dashboard',
-            [
-                'cards' => Card::where('column_id', Auth::user()->id)->get(),
-                'columns' => Column::where('table_id', Auth::user()->id)->get(),
-            ]
-        );
-    }
-    public function addCard(Request $request)
-    {
-        $column = Column::all();
-
-        $user = auth()->user();
-        $table = new Card;
-        $table->title = $request->title;
-        $table->column_id = $column->id;
-
-        $table->save();
-
 
         return view('user.postit', ['columns' => column::all(), 'cards' => card::all(),]);
     }
+    public function addCol(Request $request)
+    {
+        $user = auth()->user();
+
+        $table = new Column;
+        $table->title = $request->title;
+        $table->table_id = $user->id;
+        $table->save();
+
+
+        return view('user.postit', ['columns' => Column::where('table_id', Auth::user()->id)->get(),]);
+    }
+
+    // public function sendTable(Request $request)
+    // {
+    //     $user = auth()->user();
+    //     $table = new Table;
+    //     $table->title = $request->title;
+    //     $table->user_id = $user->id;
+
+    //     $table->save();
+
+    //     return view('user.dashboard', ['tables' => Table::all()]);
+    // }
 }

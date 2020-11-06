@@ -9,9 +9,9 @@
 
 @extends('layouts.postit_template')
 @section('postit')
-<form method="POST" action="{{ @route('user.addCard') }}">
+<form method="POST" action="{{ @route('user.addCol') }}">
     @csrf
-    <input type="textarea" name="todo">
+    <input type="textarea" name="title">
     <input type="submit" value="Ajouter">
 </form>
 @foreach($columns as $column)

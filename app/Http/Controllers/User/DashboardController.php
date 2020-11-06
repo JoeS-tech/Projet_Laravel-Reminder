@@ -47,6 +47,6 @@ class DashboardController extends Controller
 
         $table->save();
 
-        return view('user.dashboard', ['tables' => Table::all()]);
+        return view('user.dashboard', ['tables' => Table::where('user_id', Auth::user()->id)->get(),]);
     }
 }
