@@ -48,7 +48,7 @@
         <input type="text" name="firstname" id="firstname" placeholder="prénom">
         <br>
         <label for="lastname">Entrez votre nom: </label>
-        <input type="text" name="lastname" id="lastname" placeholder="nom">
+        <input type="text" name="name" id="lastname" placeholder="nom">
         <br>
         <label for="password">Entrez un nouveau mot de passe: </label>
         <input type="password" name="password" id="password" placeholder="mot de passe">
