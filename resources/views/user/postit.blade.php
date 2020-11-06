@@ -9,6 +9,11 @@
 
 @extends('layouts.postit_template')
 @section('postit')
+<form method="POST" action="{{ @route('user.addCard') }}">
+    @csrf
+    <input type="textarea" name="todo">
+    <input type="submit" value="Ajouter">
+</form>
 @foreach($columns as $column)
 
     <div class="tableau">
@@ -17,6 +22,11 @@
         </div>
         <div>
             {{ $column->id}}
+        </div>
+        <div>
+            <form method="POST">
+            <input type="text" name="cards">
+            <form>
         </div>
     </div>
 
