@@ -1,3 +1,10 @@
+<style>
+    .card_profile {
+    background-color: lightcyan;
+    border-radius: 20px;
+    border: solid 2px;
+}
+</style>
 @extends('layouts.app')
 @section('content')
 
@@ -48,7 +55,7 @@
         <input type="text" name="firstname" id="firstname" placeholder="prénom">
         <br>
         <label for="lastname" class="col-md-4 col-form-label text-md-right">Entrez votre nom: </label>
-        <input type="text" name="name" id="lastname" placeholder="nom">
+        <input type="text" name="lastname" id="lastname" placeholder="nom">
         <br>
         <label for="password" class="col-md-4 col-form-label text-md-right">Entrez un nouveau mot de passe: </label>
         <input type="password" name="password" id="password" placeholder="mot de passe">
