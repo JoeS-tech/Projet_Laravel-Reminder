@@ -24,7 +24,8 @@
             {{ $column->id}}
         </div>
         <div>
-            {{-- <form method="POST" action="{{ @route('user.addCard') }}">
+            {{-- <form method="POST" >
+                {{-- action="{{ @route('user.addCard') }}"
                 @csrf
                 <input type="textarea" name="todo">
                 <input type="submit" name="card" value="+">
