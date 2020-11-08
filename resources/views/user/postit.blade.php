@@ -1,18 +1,18 @@
 <style>
     .tableau{
         border: 2px black solid;
-        width: 25%;
-        height: 250px;
+        width: 20%;
+        min-height: 200px;
         background-color:red;
     }
 </style>
 
 @extends('layouts.postit_template')
 @section('postit')
-<form method="POST" action="{{ @route('user.addCol') }}">
+<form method="POST" action="{{ @route('user.addCol',[Ncol]) }}">
     @csrf
-    <input type="textarea" name="title">
-    <input type="submit" value="Ajouter">
+    <input type="text" name="title">
+    <input type="submit" name="col" value="Ajouter">
 </form>
 @foreach($columns as $column)
 
@@ -24,9 +24,11 @@
             {{ $column->id}}
         </div>
         <div>
-            <form method="POST">
-            <input type="text" name="cards">
-            <form>
+            {{-- <form method="POST" action="{{ @route('user.addCard') }}">
+                @csrf
+                <input type="textarea" name="todo">
+                <input type="submit" name="card" value="+">
+            </form> --}}
         </div>
     </div>
 

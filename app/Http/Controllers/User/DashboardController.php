@@ -31,8 +31,7 @@ class DashboardController extends Controller
         return view(
             'user.dashboard',
             [
-                'tables' => Table::where('user_id', Auth::user()->id)->get(),
-                'columns' => Column::where('table_id', Auth::user()->id)->get(),
+                'tables' => Table::where('user_id', Auth::user()->id)->get()
             ]
         );
     }
