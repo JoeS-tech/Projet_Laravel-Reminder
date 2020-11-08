@@ -32,5 +32,5 @@ Route::post('/dashboard', 'User\DashboardController@sendTable')->name('user.send
 
 // Route postit
 Route::get('/postit/{id_tables}', 'User\PostitController@postit')->name('user.postit');
-Route::Post('/postit/{id_tables?}', 'User\PostitController@addCol')->name('user.addCol');
+Route::Post('/postit/{id_tables}', 'User\PostitController@addCol')->name('user.addCol');
 // Route::Post('/postit/{column_id}', 'User\PostitController@addCard')->name('user.addCard');

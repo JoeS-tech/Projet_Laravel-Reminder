@@ -12,6 +12,7 @@
     @foreach ($tables as $table)
         <div>
         <a href="{{ @route('user.postit',[$table->id]) }}">{{ $table->title }}<br></a>
+
             {{ $table->id }}
         </div>
         <tr>
