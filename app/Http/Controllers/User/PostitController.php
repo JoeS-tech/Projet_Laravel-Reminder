@@ -85,6 +85,7 @@ class PostitController extends Controller
         // dd($test);
         // dd($id_tables);
         // $tableselect=Table::select()
+
         return view(
             'user.postit',
             [
@@ -94,14 +95,14 @@ class PostitController extends Controller
             ]
         );
     }
-    public function addCol(Request $request)
+    public function addCol(Request $request, $id_tables)
     {
         $user = auth()->user();
-
+        // dd($id_tables);
         $columnId = Table::where('user_id', Auth::user()->id)->get();
         foreach ($columnId as $columnIdpush) {
         }
-        dd($columnIdpush);
+        // dd($columnIdpush);
         // $columnId = Table::where('user_id', Auth::user()->id)->value('user_id');
         // $columnId = id de la table
         // $columnId = Table::select('id')->where('user_id', Auth::user()->id)->value('name');
@@ -109,7 +110,7 @@ class PostitController extends Controller
         $column = new Column;
         $column->title = $request->title;
         $column->user_id = $user->id;
-        $column->table_id = $columnIdpush->id;
+        $column->table_id = $id_tables;
 
         $column->save();
 

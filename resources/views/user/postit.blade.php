@@ -9,8 +9,11 @@
 
 @extends('layouts.postit_template')
 @section('postit')
-<form method="POST" action="{{ @route('user.addCol',[Ncol]) }}">
-    @csrf
+
+@foreach ($columns as $column)
+<form method="POST" action="{{ @route('user.addCol',[$column->table_id]) }}">
+@endforeach
+   @csrf
     <input type="text" name="title">
     <input type="submit" name="col" value="Ajouter">
 </form>

@@ -4,7 +4,7 @@
   Hellow Darkness my old friend :
 <form method="POST" action="{{ @route('user.sendTable') }}">
     @csrf
-    <input type="text" name="title">
+    <input type="text" name="title" value="Nouvelle Table">
     <input type="submit" value="Envoyer">
 </form>
 
