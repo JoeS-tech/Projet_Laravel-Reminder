@@ -101,7 +101,7 @@ class PostitController extends Controller
         $columnId = Table::where('user_id', Auth::user()->id)->get();
         foreach ($columnId as $columnIdpush) {
         }
-        // dd($columnIdpush);
+        dd($columnIdpush);
         // $columnId = Table::where('user_id', Auth::user()->id)->value('user_id');
         // $columnId = id de la table
         // $columnId = Table::select('id')->where('user_id', Auth::user()->id)->value('name');

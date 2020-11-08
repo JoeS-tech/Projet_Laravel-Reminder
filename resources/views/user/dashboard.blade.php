@@ -2,7 +2,7 @@
 @section('content')
 
   Hellow Darkness my old friend :
-<form method="POST" action="{{ @route('user.sendTable',[$table->id]) }}">
+<form method="POST" action="{{ @route('user.sendTable') }}">
     @csrf
     <input type="text" name="title">
     <input type="submit" value="Envoyer">

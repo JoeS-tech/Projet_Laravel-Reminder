@@ -27,7 +27,7 @@ Route::post('/profile', 'User\ProfileController@sendProfile')->name('user.sendPr
 
 //route dashboard = home
 Route::get('/dashboard', 'User\DashboardController@dashboard')->name('user.dashboard');
-Route::post('/dashboard/{id_table}', 'User\DashboardController@sendTable')->name('user.sendTable');
+Route::post('/dashboard', 'User\DashboardController@sendTable')->name('user.sendTable');
 
 
 // Route postit
