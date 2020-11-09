@@ -1,3 +1,13 @@
+<style>
+    body {
+    background-image: url('storage/assets/uploads/Creative-Brainstorming.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    }
+}
+</style>
+
 @extends('layouts.app')
 
 @section('content')
