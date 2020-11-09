@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Table;
+use App\Models\User;
 use App\Models\Column;
 
 
@@ -31,8 +32,7 @@ class DashboardController extends Controller
         return view(
             'user.dashboard',
             [
-                'tables' => Table::where('user_id', Auth::user()->id)->get(),
-                'columns' => Column::where('table_id', Auth::user()->id)->get(),
+                'tables' => Table::where('user_id', Auth::user()->id)->get()
             ]
         );
     }
@@ -47,6 +47,22 @@ class DashboardController extends Controller
 
         $table->save();
 
-        return view('user.dashboard', ['tables' => Table::all()]);
+        return view('user.dashboard', ['tables' => Table::where('user_id', Auth::user()->id)->get(),]);
+    }
+    public function editTable(Request $request, $id_tables)
+    {
+
+        $id = auth()->id();
+        // $id_tables = "";
+        // $table = Table::find($id);
+        $table = Table::where('id', $id_tables)->first();
+
+        if ($request->title) {
+            $table->title = $request->title;
+        }
+
+        $table->save();
+
+        return back();
     }
 }
