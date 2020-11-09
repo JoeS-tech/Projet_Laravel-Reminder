@@ -23,6 +23,11 @@
             <input type="submit" value='modifier'>
 
         </form>
+        <form method="POST" action="{{ @route('delTable',[$table->id]) }}">
+            @csrf
+            <input type="submit" value='Supprimer'>
+
+        </form>
 
         </div>
     @endforeach

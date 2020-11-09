@@ -209,4 +209,28 @@ class PostitController extends Controller
         $com->save();
         return back();
     }
+    //END All Edit functions
+
+    // all Delete functions
+    public function delCol($id_tables)
+    {
+        Column::where('id', $id_tables)->delete();
+        return back();
+    }
+
+    public function delCard($id_tables, $column_id)
+    {
+
+        Card::where('id', $column_id)->delete();
+        return back();
+    }
+
+    public function delCom($id_tables, $column_id, $card_id)
+    {
+
+        Comment::where('id', $card_id)->delete();
+        return back();
+    }
+
+    // END all Delete functions
 }
