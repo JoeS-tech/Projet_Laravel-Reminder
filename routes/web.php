@@ -41,3 +41,7 @@ Route::Post('/postit/edit/{id_tables}/{column_id}', 'User\PostitController@editC
 
 Route::Post('/postit/{id_tables}/{column_id}/{card_id}', 'User\PostitController@addCom')->name('user.addCom');
 Route::Post('/postit/edit/{id_tables}/{column_id}/{card_id}', 'User\PostitController@editCom')->name('user.editCom');
+
+Route::get('/backgrounds', 'User\BackgroundController@getAll')->name('change_background');
+Route::Post('/backgrounds', 'User\BackgroundController@addOne');
+Route::Delete('/background', 'User\BackgroundController@deleteOne');

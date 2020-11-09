@@ -10,6 +10,12 @@
         border: 1px black solid;
         text-align: center;
     }
+    body {
+        background-image: url("{{ backgroundForPage('user.postit', 'storage/assets/uploads/login-page.jpg') }}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
 </style>
 
 @extends('layouts.postit_template')

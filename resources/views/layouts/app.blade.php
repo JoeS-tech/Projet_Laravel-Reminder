@@ -1,9 +1,3 @@
-{{-- <style>
-    .nav_styles {
-        background-color: rgb(216, 124, 19);
-}
-</style> --}}
-
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -28,7 +22,7 @@
 <body>
     <div id="app">
         {{-- <div class="nav_styles"> --}}
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top">
+        <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}

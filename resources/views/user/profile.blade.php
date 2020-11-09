@@ -1,11 +1,14 @@
 <style>
     .card_profile {
-    background-color: lightcyan;
-    border-radius: 20px;
-    border: solid 2px;
+        background-color: lightcyan;
+        border-radius: 20px;
+        border: solid 2px;
     }
-    body{
-    background-image: url('storage/assets/uploads/post-it-notes.jpg');
+    body {
+        background-image: url("{{ backgroundForPage('user.profile', 'storage/assets/uploads/post-it-notes.jpg') }}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
 </style>
 @extends('layouts.app')
@@ -71,6 +74,8 @@
         <input type="password" name="password" id="password" placeholder="mot de passe">
         <br>
         <input class="btn btn-warning" type="submit" value="Valider">
+
+        <a href="{{ route('change_background') }}">Change Background</a>
     </form>
   </div>
     </div>

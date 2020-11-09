@@ -1,11 +1,10 @@
 <style>
     body {
-    background-image: url('storage/assets/uploads/home_background.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+        background-image: url("{{ backgroundForPage('home', 'storage/assets/uploads/home_background.jpg') }}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
-}
 </style>
 
 @extends('layouts.app')

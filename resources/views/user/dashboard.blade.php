@@ -1,5 +1,14 @@
+<style>
+    body {
+        background-image: url("{{ backgroundForPage('user.dashboard', 'storage/assets/uploads/login-page.jpg') }}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+</style>
 @extends('layouts.app')
 @section('content')
+
 <div>
     <h3>Ajouter une Nouvelle Table:</h3>
     <form method="POST" action="{{ @route('user.sendTable') }}">
