@@ -1,18 +1,18 @@
 <style>
     body {
-    background-image: url('storage/assets/uploads/robibi.jpg');
-    background-position: center center;
+        background-image: url("{{ backgroundForPage('user.dashboard', 'storage/assets/uploads/robibi.jpg') }}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
     .lsh_delicon{
         width:30px;
         border-radius: 50%;
     }
 </style>
-
 @extends('layouts.app')
 
 @section('content')
-
 
 <div>
     <div class="card" style="width: 18rem;">

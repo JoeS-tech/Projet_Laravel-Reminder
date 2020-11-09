@@ -13,6 +13,11 @@
     .lsh_delicon{
         width:50px;
         border-radius: 50%;
+    body {
+        background-image: url("{{ backgroundForPage('user.postit', 'storage/assets/uploads/login-page.jpg') }}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
 </style>
 

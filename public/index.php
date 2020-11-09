@@ -7,6 +7,9 @@
  * @author   Taylor Otwell <taylor@laravel.com>
  */
 
+use App\Models\Background;
+use Illuminate\Support\Facades\Auth;
+
 define('LARAVEL_START', microtime(true));
 
 /*
@@ -21,7 +24,7 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +38,7 @@ require __DIR__.'/../vendor/autoload.php';
 |
 */
 
-$app = require_once __DIR__.'/../bootstrap/app.php';
+$app = require_once __DIR__ . '/../bootstrap/app.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +53,20 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 */
 
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
+
+function backgroundForPage(string $tpl = null, string $default = null)
+{
+    $user = Auth::user();
+    if ($user) {
+        $background = Background::where('page', '=', $tpl)
+            ->where('user_id', '=', $user->id)->first();
+
+        if (!empty($background)) {
+            return '/storage/assets/uploads/backgrounds/' . $background->bg_file;
+        }
+    }
+    return $default;
+}
 
 $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
