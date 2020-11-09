@@ -1,3 +1,13 @@
+<style>
+    body {
+    background-image: url('storage/assets/uploads/Creative-Brainstorming.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    }
+}
+</style>
+
 @extends('layouts.app')
 
 @section('content')
@@ -20,7 +30,7 @@
                    <h2> Vous êtes connecté en tant que {{ Auth::user()->name }} ! </h2>
                 </div>
                 <div class="card-body">
-                    <span>Nom: {{Auth::user()->name}}</span>
+                    <span>Psuedo: {{Auth::user()->name}}</span>
                     <br>
                     @if(Auth::user()->firstname === NULL)
                     @else

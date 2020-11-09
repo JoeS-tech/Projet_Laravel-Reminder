@@ -29,7 +29,7 @@ class ProfileController extends Controller
                 'firstname' => 'nullable|string|alpha|min:2',
                 'lastname' => 'nullable|string|alpha',
                 'email' => 'nullable|email|max:60',
-                'password' => 'nullable|min:8',
+                'password' => 'nullable|min:6|confirmed',
                 'avatar' => 'nullable|mimes:jpg,jpeg,png',
             ]
         );
@@ -38,6 +38,7 @@ class ProfileController extends Controller
 
         if ($request->avatar) {
             if (($avatarPath = $avatar->store('public/assets/uploads'))) {
+                $profile->avatar = $avatarPath;
                 $avatarPath = explode('/', $avatarPath);
                 $marou = array_pop($avatarPath);
                 $profile->avatar = $marou;
@@ -60,6 +61,8 @@ class ProfileController extends Controller
         }
 
         $profile->save();
+
+        // return response()->json(['user_updated' => true], 201);
 
         // dd($user);
         // dd($profile);

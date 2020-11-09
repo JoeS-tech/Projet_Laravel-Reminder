@@ -3,12 +3,19 @@
     background-color: lightcyan;
     border-radius: 20px;
     border: solid 2px;
+    }
+    body{
+    background-image: url('storage/assets/uploads/post-it-notes.jpg');
+    }
 }
 </style>
 @extends('layouts.app')
 @section('content')
 
+
 <div class="container">
+    <div class="row">
+        <div class="col-sm">
 <div class="card-body text-center">
     <div class="card_profile">
 
@@ -45,7 +52,6 @@
 
         <label for="file" class="col-md-4 col-form-label text-md-right">Séléctionnez votre avatar! </label>
         <input type="file" name="avatar"  id="file">
-
         <br>
         <label for="name" class="col-md-4 col-form-label text-md-right">Entrez un nouveau pseudo: </label>
         <input type="text" name="name" id="name" value="{{Auth::user()->name}}">
@@ -65,10 +71,12 @@
         <label for="password" class="col-md-4 col-form-label text-md-right">Confirmez mot de passe: </label>
         <input type="password" name="password" id="password" placeholder="mot de passe">
         <br>
-        <input type="submit" value="Valider">
+        <input class="btn btn-warning" type="submit" value="Valider">
     </form>
   </div>
+    </div>
 </div>
+    </div>
 </div>
 
 @endsection
