@@ -97,7 +97,7 @@ class PostitController extends Controller
                     ->get(),
                 'cards' => Card::all(),
                 'comments' => Comment::all(),
-                $id_tables,
+                'table' => $id_tables,
                 // 'tables' => $id_tables,
             ]
         );
@@ -112,8 +112,6 @@ class PostitController extends Controller
         $column->title = $request->title;
         $column->user_id = $user->id;
         $column->table_id = $id_tables;
-
-
 
         $column->save();
 
@@ -166,6 +164,7 @@ class PostitController extends Controller
         $comment->comment = $request->comment;
         $comment->user_id = $user->id;
         $comment->card_id = $id_card;
+        // dd($id_card);
         // dd($comment);
 
         $comment->save();
