@@ -5,7 +5,7 @@
     border: solid 2px;
     }
     body{
-    background-image: url('storage/assets/uploads/post-it-notes.jpg');
+    background-image: url('storage/assets/uploads/profil.png');
     }
 </style>
 @extends('layouts.app')

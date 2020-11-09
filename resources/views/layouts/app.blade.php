@@ -1,7 +1,7 @@
 <style>
-    .nav_styles {
-        background-color: rgb(216, 124, 19);
-}
+  app {
+    font-family: 'Big Shoulders Inline Text', cursive;
+  }
 </style>
 
 <!doctype html>
@@ -22,13 +22,14 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         {{-- <div class="nav_styles"> --}}
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top">
+        <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm sticky-top na">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -56,12 +57,12 @@
                                 </li>
                             @endif
                         @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ @route('user.dashboard') }}">Mes Tableaux</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('user.profile') }}">{{ __('Profil') }}</a>
-                        </li>
+                        <div class="container">
+                            <a class="navbar-brand" href="{{ @route('user.dashboard') }}">Mes Tableaux</a>
+                        </div>
+                        <div class="container">
+                            <a class="navbar-brand" href="{{ route('user.profile') }}">{{ __('Profil') }}</a>
+                        </div>
                             <li class="nav-item dropdown">
                                 @if(Auth::user()->avatar == 1)
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -86,7 +87,7 @@
                                 </div>
                             </li>
                         @endguest
-                    </ul>
+                    </  ul>
                 </div>
             </div>
         {{-- </div> --}}
