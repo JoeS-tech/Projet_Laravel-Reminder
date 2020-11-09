@@ -188,12 +188,8 @@ $darkBackground: #5b5f97;
         @endif
         <h2>Email: {{Auth::user()->email}} </h2>
     </div>
-    <div class="social">
-      <a>GitHub</a>
-      <a>Twitter</a>
-      <a>LinkedIn</a>
-    </div>
-    <button>Hire Me</button>
+
+   <a href = "{{ @route('user.dashboard') }}"> <button > Mes Tableaux</button> </a>
     <footer>
       <div class="likes">
         <p><i class='fa fa-heart'></i></p>
@@ -228,7 +224,7 @@ $darkBackground: #5b5f97;
                    <h2> Vous êtes connecté en tant que {{ Auth::user()->name }} ! </h2>
                 </div>
                 <div class="card-body">
-                    <span>Psuedo: {{Auth::user()->name}}</span>
+                    <span>Pseudo: {{Auth::user()->name}}</span>
                     <br>
                     @if(Auth::user()->firstname === NULL)
                     @else

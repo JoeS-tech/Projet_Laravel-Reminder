@@ -59,6 +59,9 @@
                             @endif
                         @else
                         <div class="container">
+                            <a class="navbar-brand" href="{{ @route('home') }}">Accueil</a>
+                        </div>
+                        <div class="container">
                             <a class="navbar-brand" href="{{ @route('user.dashboard') }}">Mes Tableaux</a>
                         </div>
                         <div class="container">
