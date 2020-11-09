@@ -1,6 +1,6 @@
 <style>
     body {
-    background-image: url('storage/assets/uploads/Reminder.jpg');
+    background-image: url('storage/assets/uploads/login-page.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -23,7 +23,7 @@
         <style>
             html, body {
                 background-color: rgba(255, 255, 255, 0.835);
-                color: #636b6fd8;
+                color: #ffffff;
                 font-family: 'Big Shoulders Inline Text', cursive;
 
 
@@ -57,13 +57,13 @@
             }
 
             .title {
-                font-size: 70px;
+                font-size: 90px;
             }
 
             .links > a {
-                color: #636b6f;
+                color: #ffffff;
                 padding: 0 25px;
-                font-size: 13px;
+                font-size: 18px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
