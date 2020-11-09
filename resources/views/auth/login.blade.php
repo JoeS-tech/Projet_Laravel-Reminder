@@ -1,8 +1,9 @@
 <style>
-    .log_card {
-    background-color: lightcyan;
-    border-radius: 20px;
-    border: solid 2px;
+    body {
+    background-image: url('storage/assets/uploads/login-page.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 </style>
 
@@ -15,7 +16,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card log_card">
+            <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

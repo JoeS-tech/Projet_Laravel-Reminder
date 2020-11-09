@@ -1,3 +1,12 @@
+<style>
+    body {
+    background-image: url('storage/assets/uploads/registration-form.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    }
+}
+</style>
 @extends('layouts.app')
 
 @section('content')
