@@ -16,9 +16,15 @@ class CreateCardsTable extends Migration
         Schema::create('cards', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->nullable();
-            $table->bigInteger('column_id');
+            $table->bigInteger('column_id')->unsigned();
             $table->string('todo')->nullable();
             $table->timestamps();
+
+            $table->foreign('column_id')
+                ->references('id')
+                ->on('columns')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

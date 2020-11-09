@@ -5,7 +5,7 @@
         border: solid 2px;
     }
     body {
-        background-image: url("{{ backgroundForPage('user.profile', 'storage/assets/uploads/post-it-notes.jpg') }}");
+        background-image: url("{{ backgroundForPage('user.profile', 'storage/assets/uploads/profil.png') }}");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

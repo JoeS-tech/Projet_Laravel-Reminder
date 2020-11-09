@@ -1,12 +1,13 @@
 <style>
     body {
-        background-image: url("{{ backgroundForPage('user.dashboard', 'storage/assets/uploads/login-page.jpg') }}");
+        background-image: url("{{ backgroundForPage('user.dashboard', 'storage/assets/uploads/robibi.jpg') }}");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
     }
 </style>
 @extends('layouts.app')
+
 @section('content')
 
 <div>
@@ -30,6 +31,11 @@
             <input type="text" name="title" value="Changer le Titre">
             <input type="hidden" name="test" value='{{$table->id}}'>
             <input type="submit" value='modifier'>
+
+        </form>
+        <form method="POST" action="{{ @route('delTable',[$table->id]) }}">
+            @csrf
+            <input type="submit" value='Supprimer'>
 
         </form>
 

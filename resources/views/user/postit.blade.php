@@ -59,6 +59,10 @@
                 <input type="text" name="title">
                 <input type="submit" name="editCol" value="Edit">
             </form>
+            <form method="POST"  action="{{ @route('user.delCol', [$column->id]) }}">
+                @csrf
+                <input type="submit" name="delCol" value="Supprimer">
+            </form>
 
             <form method="POST"  action="{{ @route('user.addCard', [$column->table_id, $column->id]) }}">
                 @csrf
@@ -75,6 +79,11 @@
                     @csrf
                     <input type="textarea" name="todo">
                     <input type="submit" name="editCard" value="Edit">
+                </form>
+
+                <form method="POST"  action="{{ @route('user.delCard', [$column->table_id, $card->id]) }}">
+                    @csrf
+                    <input type="submit" name="delCard" value="Supprimer">
                 </form>
                 <p> {{ $card->id }} </p>
 
@@ -99,6 +108,11 @@
                                     @csrf
                                     <input type="textarea" name="comment">
                                     <input type="submit" name="editCom" value="Edit">
+                                </form>
+
+                                <form method="POST"  action="{{ @route('user.delCom', [$column->table_id, $column->id, $comment->id]) }}">
+                                    @csrf
+                                    <input type="submit" name="delCom" value="Supprimer">
                                 </form>
                             @endif
 
