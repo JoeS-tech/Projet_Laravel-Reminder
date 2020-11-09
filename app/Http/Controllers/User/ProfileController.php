@@ -49,13 +49,13 @@ class ProfileController extends Controller
         if ($request->name) {
             $profile->name = $request->name;
         }
-        if ($request->name) {
+        if ($request->firstname) {
             $profile->firstname = $request->firstname;
         }
-        if ($request->name) {
+        if ($request->email) {
             $profile->email = $request->email;
         }
-        if ($request->name) {
+        if ($request->password) {
             $profile->password = Hash::make($request->password);
         }
 
