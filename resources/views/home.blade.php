@@ -1,9 +1,9 @@
 <style>
     body {
-    background-image: url('storage/assets/uploads/home_background.jpg');
+    background-image: url('storage/assets/uploads/bleu.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     }
 }
 </style>
@@ -39,7 +39,7 @@
                     @endif
                     <span>Email: {{Auth::user()->email}}</span>
                 </div>
-                <button class="btn btn-warning" onclick="window.location.href='{{@route('user.profile')}}'">Modifiez votre Profil</button>
+                <button onclick="window.location.href='{{@route('user.profile')}}'">Modifiez votre Profil</button>
             </div>
         </div>
     </div>

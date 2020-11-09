@@ -1,5 +1,15 @@
+<style>
+    body {
+    background-image: url('storage/assets/uploads/robibi.jpg');
+    background-position: center center;
+    }
+</style>
+
 @extends('layouts.app')
+
 @section('content')
+
+
 <div>
     <h3>Ajouter une Nouvelle Table:</h3>
     <form method="POST" action="{{ @route('user.sendTable') }}">
