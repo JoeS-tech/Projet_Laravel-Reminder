@@ -14,11 +14,11 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <a href="{{ @route('user.profile') }}">Modifier le profil</a>
+
 
             <div class="card">
                 <div class="card-header">Dashboard</div>
-                <a href="{{ @route('user.dashboard') }}">Dash</a>
+
 
                 <div class="card-body">
                     @if (session('status'))
