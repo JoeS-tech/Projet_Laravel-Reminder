@@ -7,7 +7,6 @@
     body{
     background-image: url('storage/assets/uploads/post-it-notes.jpg');
     }
-}
 </style>
 @extends('layouts.app')
 @section('content')

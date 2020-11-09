@@ -35,28 +35,25 @@ class ProfileController extends Controller
         );
 
         $avatar = $request->avatar;
-
-        if ($request->avatar) {
-            if (($avatarPath = $avatar->store('public/assets/uploads'))) {
-                $profile->avatar = $avatarPath;
-                $avatarPath = explode('/', $avatarPath);
-                $marou = array_pop($avatarPath);
-                $profile->avatar = $marou;
-            } else {
-                $profile->avatar = '';
-            }
+        if (($avatarPath = $avatar->store('public/assets/uploads'))) {
+            $profile->avatar = $avatarPath;
+            $avatarPath = explode('/', $avatarPath);
+            $marou = array_pop($avatarPath);
+            $profile->avatar = $marou;
+        } else {
+            $profile->avatar = '';
         }
 
         if ($request->name) {
             $profile->name = $request->name;
         }
-        if ($request->name) {
+        if ($request->firstname) {
             $profile->firstname = $request->firstname;
         }
-        if ($request->name) {
+        if ($request->email) {
             $profile->email = $request->email;
         }
-        if ($request->name) {
+        if ($request->password) {
             $profile->password = Hash::make($request->password);
         }
 
