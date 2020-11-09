@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Column;
 use App\Models\Card;
 use App\Models\Table;
+use App\Models\Comment;
 use Illuminate\Support\Facades\DB;
 
 class PostitController extends Controller
@@ -18,6 +19,7 @@ class PostitController extends Controller
     }
     public function postit($id_tables)
     {
+
         // $column = Column::all();
         // $card = Card::all();
         // DB::table('users')
@@ -91,48 +93,82 @@ class PostitController extends Controller
             [
                 'columns' => Column::where('user_id', Auth::user()->id)
                     ->where('table_id', $id_tables)
+                    // ->where('table_id', Table::select('id'))
                     ->get(),
+                'cards' => Card::all(),
+                'comments' => Comment::all(),
+                $id_tables,
+                // 'tables' => $id_tables,
             ]
         );
     }
     public function addCol(Request $request, $id_tables)
     {
+        // dd($id_tables);
+
+        dd($request);
         $user = auth()->user();
+        $column = new Column;
+        $column->title = $request->title;
+        $column->user_id = $user->id;
+        $column->table_id = $request->$id_tables;
+
+
+        $column->save();
+
+
+        return back();
+        // dd($id_tables);
+
+        // $columnId = Column::where('table_id', $id_tables)->get();
+
+        // foreach ($columnId as $columnIdpush) {
+        //     $registerID = $columnIdpush->table_id;
+        // }
+
         // dd($id_tables);
         // $columnId = Table::where('user_id', Auth::user()->id)->get();
         // foreach ($columnId as $columnIdpush) {
+        // $registerID = $columnIdpush->table_id;
         // }
         // dd($columnIdpush);
         // $columnId = Table::where('user_id', Auth::user()->id)->value('user_id');
         // $columnId = id de la table
         // $columnId = Table::select('id')->where('user_id', Auth::user()->id)->value('name');
         // dd($columnId);
-        $column = new Column;
-        $column->title = $request->title;
-        $column->user_id = $user->id;
-        $column->table_id = $id_tables;
 
-        $column->save();
+    }
+
+    public function addCard(Request $request, $id_tables, $id_column)
+    {
+        // $cardId = 6;
+        // dd($cardId);
+        // dd($id_tables);
+
+        $user = auth()->user();
+        $card = new Card;
+        $card->todo = $request->todo;
+        $card->user_id = $user->id;
+        $card->column_id = $id_column;
+        // dd($card);
+
+        $card->save();
 
 
         return back();
     }
+    public function addCom(Request $request, $id_tables, $id_column, $id_card)
+    {
 
-    // public function addCard(Request $request)
-    // {
-    //     $user = auth()->user();
+        $user = auth()->user();
+        $comment = new Comment;
+        $comment->comment = $request->comment;
+        $comment->user_id = $user->id;
+        $comment->card_id = $id_card;
+        // dd($comment);
 
-    //     $cardId = Column::where('table_id', Auth::user()->id)->value('table_id');
-    //     // dd($cardId);
-    //     $card = new Card;
-    //     $card->todo = $request->todo;
-    //     $card->user_id = $user->id;
-    //     $card->column_id = $cardId;
-    //     dd($card);
+        $comment->save();
 
-    //     $card->save();
-
-
-    //     return view('user.postit', ['cards' => Card::where('column_id', Auth::user()->id)->get(),]);
-    // }
+        return back();
+    }
 }

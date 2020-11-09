@@ -12,17 +12,18 @@
     @foreach ($tables as $table)
         <div>
         <a href="{{ @route('user.postit',[$table->id]) }}">{{ $table->title }}<br></a>
+        {{ $table->id }}
 
-            {{ $table->id }}
+        <form method="POST" action="{{ @route('ediTable') }}">
+            @csrf
+
+            <input type="text" name="title" value="Changer le Titre">
+            <input type="hidden" name="test" value='{{$table->id}}'>
+            <input type="submit" value='modifier'>
+
+        </form>
+
         </div>
-        <tr>
-            <ul></ul>
-        </tr>
-        <tr>
-            <td>
-                <ul></ul>
-            </td>
-        </tr>
     @endforeach
 </table>
 

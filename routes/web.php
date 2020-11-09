@@ -28,9 +28,10 @@ Route::post('/profile', 'User\ProfileController@sendProfile')->name('user.sendPr
 //route dashboard = home
 Route::get('/dashboard', 'User\DashboardController@dashboard')->name('user.dashboard');
 Route::post('/dashboard', 'User\DashboardController@sendTable')->name('user.sendTable');
-
+Route::post('/dashboard/edit', 'User\DashboardController@editTable')->name('ediTable');
 
 // Route postit
 Route::get('/postit/{id_tables}', 'User\PostitController@postit')->name('user.postit');
 Route::Post('/postit/{id_tables}', 'User\PostitController@addCol')->name('user.addCol');
-// Route::Post('/postit/{column_id}', 'User\PostitController@addCard')->name('user.addCard');
+Route::Post('/postit/{id_tables}/{column_id}', 'User\PostitController@addCard')->name('user.addCard');
+Route::Post('/postit/{id_tables}/{column_id}/{card_id}', 'User\PostitController@addCom')->name('user.addCom');
