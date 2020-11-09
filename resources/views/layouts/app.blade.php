@@ -1,3 +1,9 @@
+<style>
+    .nav_styles {
+        background-color: rgb(216, 124, 19);
+}
+</style>
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -21,6 +27,7 @@
 </head>
 <body>
     <div id="app">
+        {{-- <div class="nav_styles"> --}}
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -53,9 +60,16 @@
                             <a class="nav-link" href="{{ route('user.profile') }}">{{ __('Profil') }}</a>
                         </li>
                             <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        <img style="width:50px" src="{{asset('/storage/assets/uploads/'.Auth::user()->avatar)}}"> {{ Auth::user()->name }} <span class="caret"></span>
-                                    </a>
+                                @if(Auth::user()->avatar == 1)
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <img style="width:50px" src="{{asset('/storage/assets/uploads/avatar1.png')}}"> {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+                                @endif
+                                @if(Auth::user()->avatar != 1)
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <img style="width:50px" src="{{asset('/storage/assets/uploads/'.Auth::user()->avatar)}}"> {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+                                @endif
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -72,6 +86,7 @@
                     </ul>
                 </div>
             </div>
+        {{-- </div> --}}
         </nav>
 
         <main class="py-4">

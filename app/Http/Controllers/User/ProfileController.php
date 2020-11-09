@@ -35,16 +35,13 @@ class ProfileController extends Controller
         );
 
         $avatar = $request->avatar;
-
-        if ($request->avatar) {
-            if (($avatarPath = $avatar->store('public/assets/uploads'))) {
-                $profile->avatar = $avatarPath;
-                $avatarPath = explode('/', $avatarPath);
-                $marou = array_pop($avatarPath);
-                $profile->avatar = $marou;
-            } else {
-                $profile->avatar = '';
-            }
+        if (($avatarPath = $avatar->store('public/assets/uploads'))) {
+            $profile->avatar = $avatarPath;
+            $avatarPath = explode('/', $avatarPath);
+            $marou = array_pop($avatarPath);
+            $profile->avatar = $marou;
+        } else {
+            $profile->avatar = '';
         }
 
         if ($request->name) {
