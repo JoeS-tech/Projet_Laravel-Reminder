@@ -1,8 +1,8 @@
 <style>
-  app {
+  .nav_styles {
     font-family: 'Big Shoulders Inline Text', cursive;
   }
-</style>
+  </style>
 
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -21,19 +21,20 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text:wght@900&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        {{-- <div class="nav_styles"> --}}
+        <div class="nav_styles">
         <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm sticky-top na">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <div class= "police"> <a class="navbar-brand " href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -90,7 +91,7 @@
                     </  ul>
                 </div>
             </div>
-        {{-- </div> --}}
+        </div>
         </nav>
 
         <main class="py-4">
