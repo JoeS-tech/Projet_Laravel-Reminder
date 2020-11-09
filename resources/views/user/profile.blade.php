@@ -75,7 +75,7 @@
         <br>
         <input class="btn btn-warning" type="submit" value="Valider">
 
-        <a href="{{ route('change_background') }}">Change Background</a>
+        <a class="btn btn-danger" href="{{ route('change_background') }}">Change Background</a>
     </form>
   </div>
     </div>
