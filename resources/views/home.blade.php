@@ -146,7 +146,7 @@ $darkBackground: #5b5f97;
 }
 
     body {
-    background-image: url('storage/assets/uploads/bleu.jpg');
+    background-image: url("{{ backgroundForPage('home', 'storage/assets/uploads/bleu.jpg') }}");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;

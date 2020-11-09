@@ -10,6 +10,15 @@
         border: 1px black solid;
         text-align: center;
     }
+    .lsh_delicon{
+        width:50px;
+        border-radius: 50%;
+    body {
+        background-image: url("{{ backgroundForPage('user.postit', 'storage/assets/uploads/login-page.jpg') }}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
 </style>
 
 @extends('layouts.postit_template')
@@ -22,6 +31,14 @@
     @endforeach
             @csrf
             <div>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Ajouter une Colonne</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="card-link">Card link</a>
+                      <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
                 <input type="text" name="title">
                 <input type="submit" name="col" value="Ajouter">
             </div>
@@ -55,13 +72,15 @@
             </form>
             <form method="POST"  action="{{ @route('user.delCol', [$column->id]) }}">
                 @csrf
-                <input type="submit" name="delCol" value="Supprimer">
+                <input class="lsh_delicon"type="image" name="delCol" src="../storage/assets/uploads/del.png" alt="iconDel">
+
             </form>
 
             <form method="POST"  action="{{ @route('user.addCard', [$column->table_id, $column->id]) }}">
                 @csrf
                 <input type="textarea" name="todo">
                 <input type="submit" name="card" value="+">
+
             </form>
         </div>
             @foreach ($cards as $card)
@@ -77,7 +96,7 @@
 
                 <form method="POST"  action="{{ @route('user.delCard', [$column->table_id, $card->id]) }}">
                     @csrf
-                    <input type="submit" name="delCard" value="Supprimer">
+                    <input class="lsh_delicon"type="image" name="delCard" src="../storage/assets/uploads/del.png" alt="iconDel">
                 </form>
                 <p> {{ $card->id }} </p>
 
@@ -106,7 +125,7 @@
 
                                 <form method="POST"  action="{{ @route('user.delCom', [$column->table_id, $column->id, $comment->id]) }}">
                                     @csrf
-                                    <input type="submit" name="delCom" value="Supprimer">
+                                    <input class="lsh_delicon"type="image" name="delCom" src="../storage/assets/uploads/del.png" alt="iconDel">
                                 </form>
                             @endif
 
