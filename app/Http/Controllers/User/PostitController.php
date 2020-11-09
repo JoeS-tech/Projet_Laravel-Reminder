@@ -106,12 +106,13 @@ class PostitController extends Controller
     {
         // dd($id_tables);
 
-        dd($request);
+        // dd($request);
         $user = auth()->user();
         $column = new Column;
         $column->title = $request->title;
         $column->user_id = $user->id;
-        $column->table_id = $request->$id_tables;
+        $column->table_id = $id_tables;
+
 
 
         $column->save();

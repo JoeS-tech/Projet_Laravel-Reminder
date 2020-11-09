@@ -49,11 +49,14 @@ class DashboardController extends Controller
 
         return view('user.dashboard', ['tables' => Table::where('user_id', Auth::user()->id)->get(),]);
     }
-    public function editTable(Request $request)
+    public function editTable(Request $request, $id_tables)
     {
 
         $id = auth()->id();
-        $table = Table::find($id);
+        // $id_tables = "";
+        // $table = Table::find($id);
+        $table = Table::where('id', $id_tables)->first();
+
         if ($request->title) {
             $table->title = $request->title;
         }
