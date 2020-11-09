@@ -53,10 +53,9 @@
                             <a class="nav-link" href="{{ route('user.profile') }}">{{ __('Profil') }}</a>
                         </li>
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <img style="width:50px" src="{{asset('/storage/assets/uploads/'.Auth::user()->avatar)}}"> {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        <img style="width:50px" src="{{asset('/storage/assets/uploads/'.Auth::user()->avatar)}}"> {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

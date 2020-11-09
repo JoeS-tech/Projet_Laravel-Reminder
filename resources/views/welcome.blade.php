@@ -1,6 +1,6 @@
 <style>
     body {
-    background-image: url('storage/assets/uploads/Reminder.jpg');
+    background-image: url('storage/assets/uploads/login-page.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

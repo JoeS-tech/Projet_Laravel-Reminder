@@ -17,6 +17,8 @@ class PostitController extends Controller
     {
         $this->middleware('auth');
     }
+
+    //All CREATE functions
     public function postit($id_tables)
     {
 
@@ -169,6 +171,42 @@ class PostitController extends Controller
 
         $comment->save();
 
+        return back();
+    }
+    //All Edit functions
+    public function editCol(Request $request, $id_tables)
+    {
+
+        $id = auth()->id();
+        $column = Column::where('id', $id_tables)->first();
+
+        if ($request->title) {
+            $column->title = $request->title;
+        }
+
+        $column->save();
+        return back();
+    }
+    public function editCard(Request $request,  $id_tables, $id_column)
+    {
+        $id = auth()->id();
+        $column = Card::where('id', $id_column)->first();
+        if ($request->todo) {
+            $column->todo = $request->todo;
+        }
+        $column->save();
+        return back();
+    }
+    public function editCom(Request $request, $id_tables, $id_column, $id_card)
+    {
+
+        $id = auth()->id();
+        $com = Comment::where('id', $id_card)->first();
+        if ($request->comment) {
+            $com->comment = $request->comment;
+        }
+
+        $com->save();
         return back();
     }
 }

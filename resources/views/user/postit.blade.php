@@ -47,6 +47,13 @@
         </div>
 
         <div>
+
+            <form method="POST"  action="{{ @route('user.editCol', [$column->id]) }}">
+                @csrf
+                <input type="text" name="title">
+                <input type="submit" name="editCol" value="Edit">
+            </form>
+
             <form method="POST"  action="{{ @route('user.addCard', [$column->table_id, $column->id]) }}">
                 @csrf
                 <input type="textarea" name="todo">
@@ -57,6 +64,12 @@
             @if($card->column_id == $column->id)
             <div class="border_cards">
                 <p> {{ $card->todo }} </p>
+
+                <form method="POST"  action="{{ @route('user.editCard', [$column->table_id, $card->id]) }}">
+                    @csrf
+                    <input type="textarea" name="todo">
+                    <input type="submit" name="editCard" value="Edit">
+                </form>
                 <p> {{ $card->id }} </p>
 
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="{{ '.modalComment'.$card->id }}">+</button>
@@ -66,8 +79,8 @@
 
                             <form method="POST"  action="{{ @route('user.addCom', [$column->table_id, $column->id, $card->id]) }}">
                                 @csrf
-                                <input type="textarea" name="comment">
-                                <input type="submit" name="card" value="+">
+                                <input type="textarea" name="comment" placeholder="Commentez">
+                                <input type="submit" name="addCard" value="+">
                             </form>
 
                             @foreach ($comments as $comment)
@@ -75,8 +88,14 @@
                             @if($comment->card_id == $card->id)
 
                                 <p> {{ $comment->comment }} </p>
-                                <p> {{ $card->id }} </p>
+                                <p> {{ $comment->id }} </p>
+                                <form method="POST"  action="{{ @route('user.editCom', [$column->table_id, $column->id, $comment->id]) }}">
+                                    @csrf
+                                    <input type="textarea" name="comment">
+                                    <input type="submit" name="editCom" value="Edit">
+                                </form>
                             @endif
+
                             @endforeach
 
                         </div>

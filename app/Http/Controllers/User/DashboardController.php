@@ -53,7 +53,6 @@ class DashboardController extends Controller
     {
 
         $id = auth()->id();
-        // $id_tables = "";
         // $table = Table::find($id);
         $table = Table::where('id', $id_tables)->first();
 
