@@ -64,4 +64,9 @@ class DashboardController extends Controller
 
         return back();
     }
+    public function delTable($id_tables)
+    {
+        Table::where('id', $id_tables)->delete();
+        return back();
+    }
 }
