@@ -1,8 +1,8 @@
-<style>
+{{-- <style>
     .nav_styles {
         background-color: rgb(216, 124, 19);
 }
-</style>
+</style> --}}
 
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
