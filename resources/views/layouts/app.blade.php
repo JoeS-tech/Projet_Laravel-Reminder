@@ -57,6 +57,7 @@
                             @endif
                         @else
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ @route('user.dashboard') }}">Mes Tableaux</a>
                             <a class="nav-link" href="{{ route('user.profile') }}">{{ __('Profil') }}</a>
                         </li>
                             <li class="nav-item dropdown">
