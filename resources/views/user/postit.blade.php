@@ -74,12 +74,18 @@
 
 
         @else
-        <form method="POST" action="{{ @route('user.addCol',[$table]) }}">
-
-            @csrf
-            <input type="text" name="title">
-            <input type="submit" name="col" value="Ajouter">
-        </form>
+        <div>
+            <form method="POST" action="{{ @route('user.addCol',[$table]) }}">
+                @csrf
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Ajouter une Colonne</h5>
+                        <input type="text" name="title">
+                        <input type="submit" name="col" value="Ajouter">
+                    </div>
+                </div>
+            </form>
+        </div>
         @endif
     </div>
     <div class="row lsh_center">
