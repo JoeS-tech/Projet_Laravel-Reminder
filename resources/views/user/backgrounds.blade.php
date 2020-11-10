@@ -1,8 +1,19 @@
+<style>
+    .bg_font {
+        font-family: 'Oleo Script', cursive;
+    }
+    body {
+        background-image: url("{{ backgroundForPage('user.profile', 'storage/assets/uploads/profil.png') }}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+</style>
 @extends('layouts.app')
 
 @section('content')
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 bg_font">
             <table class="table">
                 <thead>
                     <tr>
