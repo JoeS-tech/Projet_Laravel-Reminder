@@ -53,7 +53,7 @@
 @extends('layouts.postit_template')
 @section('postit')
 <div class="container-fluid">
-    <div class="row lsh_center">
+    <div class="row lsh_center lsh_Colcenter">
         @if($columns->isNotEmpty())
 
         @foreach ($columns as $column)
@@ -63,7 +63,7 @@
             <div>
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Ajouter une Colonne</h5>
+                        <h5 class="card-title lsh_Colcenter">Ajouter une Colonne</h5>
                         <input type="text" name="title">
                         <input type="submit" name="col" value="Ajouter">
                     </div>
@@ -77,9 +77,9 @@
         <div>
             <form method="POST" action="{{ @route('user.addCol',[$table]) }}">
                 @csrf
-                <div class="card" style="width: 18rem;">
+                <div class="card lsh_center" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Ajouter une Colonne</h5>
+                        <h5 class="card-title lsh_Colcenter">Ajouter une Colonne</h5>
                         <input type="text" name="title">
                         <input type="submit" name="col" value="Ajouter">
                     </div>
@@ -88,11 +88,11 @@
         </div>
         @endif
     </div>
-    <div class="row lsh_center">
+    <div class="row lsh_Colcenter">
         @foreach($columns as $column)
 
         <div class="col-4 lsh_colCenter">
-            <div class="card" style="width: 18rem;">
+            <div class="card lsh_center" style="width: 18rem;">
                 <div class="card-body">
                     <div class="row">
                         <div class="col"></div>
