@@ -79,27 +79,33 @@
         <div class="col-4">
             <div class="card lsh_center" style="width: 18rem;">
                 <div class="card-body">
-                    <div class="col"></div>
-                    <div class="col">
-                        <h3 class="card-title">{{ $column->title }}</h3>
-                        <div>
-                            <!-- Small modal -->
-                            <input type="image" class="lsh_editicon" data-toggle="modal"
-                                src="../storage/assets/uploads/edit.png" alt="iconEdit"
-                                data-target="{{ '.modalColumn'.$column->id }}">
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col">
+                            <h3 class="card-title">{{ $column->title }}</h3>
                         </div>
-                    </div>
-                    <div class="modal fade {{ 'modalColumn'.$column->id }}" tabindex="-1" role="dialog"
-                        aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-sm">
-                            <div class="modal-content">
+                        <div class="col">
 
-                                <form method="POST" action="{{ @route('user.editCol', [$column->id]) }}">
-                                    @csrf
-                                    <input type="text" name="title">
-                                    <input type="submit" name="editCol" value="Edit">
-                                </form>
+                                <!-- Small modal -->
+                                <input type="image" class="lsh_editicon" data-toggle="modal"
+                                    src="../storage/assets/uploads/edit.png" alt="iconEdit"
+                                    data-target="{{ '.modalColumn'.$column->id }}">
 
+
+
+                            <div class="modal fade {{ 'modalColumn'.$column->id }}" tabindex="-1" role="dialog"
+                                aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+
+                                        <form method="POST" action="{{ @route('user.editCol', [$column->id]) }}">
+                                            @csrf
+                                            <input type="text" name="title">
+                                            <input type="submit" name="editCol" value="Edit">
+                                        </form>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
