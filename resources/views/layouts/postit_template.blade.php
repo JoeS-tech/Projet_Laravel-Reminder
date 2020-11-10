@@ -2,7 +2,7 @@
 @section('content')
 
 @yield('postit')
-Hellow Post-it !!!
+
 
 
 
