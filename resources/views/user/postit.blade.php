@@ -185,26 +185,24 @@
                     aria-labelledby="myLargeModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
-
-                            <form method="POST"
+                            <h4 class="lsh_Colcenter">Ajouter un Commentaire<h4>
+                            <form class="lsh_Colcenter" method="POST"
                                 action="{{ @route('user.addCom', [$column->table_id, $column->id, $card->id]) }}">
                                 @csrf
                                 <input type="textarea" name="comment" placeholder="Commentez">
                                 <input type="submit" name="addCard" value="+">
                             </form>
-
                             @foreach ($comments as $comment)
 
                             @if($comment->card_id == $card->id)
 
-                            <p> {{ $comment->comment }} </p>
-                            <p> {{ $comment->id }} </p>
-                            <form method="POST"
-                                action="{{ @route('user.editCom', [$column->table_id, $column->id, $comment->id]) }}">
-                                @csrf
-                                <input type="textarea" name="comment">
-                                <input type="submit" name="editCom" value="Edit">
-                            </form>
+                                <h5 class="lsh_todo"> {{ $comment->comment }} </h5>
+                                <form class="lsh_todo" method="POST"
+                                    action="{{ @route('user.editCom', [$column->table_id, $column->id, $comment->id]) }}">
+                                    @csrf
+                                    <input type="textarea" name="comment">
+                                    <input type="submit" name="editCom" value="Edit">
+                                </form>
 
                             <form method="POST"
                                 action="{{ @route('user.delCom', [$column->table_id, $column->id, $comment->id]) }}">
