@@ -3,7 +3,7 @@
         font-family: 'Oleo Script', cursive;
     }
     body {
-        background-image: url("{{ backgroundForPage('user.profile', 'storage/assets/uploads/profil.png') }}");
+        background-image: url("{{ backgroundForPage('user.backgrounds', 'storage/assets/uploads/profil.png') }}");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
