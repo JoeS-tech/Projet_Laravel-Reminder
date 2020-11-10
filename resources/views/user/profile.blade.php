@@ -3,6 +3,10 @@
         background-color: lightcyan;
         border-radius: 20px;
         border: solid 2px;
+        font-family: 'Oleo Script', cursive;
+    }
+    .formulaire_profile {
+        font-family: 'Oleo Script', cursive;
     }
     body {
         background-image: url("{{ backgroundForPage('user.profile', 'storage/assets/uploads/profil.png') }}");
@@ -72,10 +76,10 @@
         <br>
         <label for="password" class="col-md-4 col-form-label text-md-right">Confirmez mot de passe: </label>
         <input type="password" name="password" id="password" placeholder="mot de passe">
-        <br>
-        <input class="btn btn-warning" type="submit" value="Valider">
+        <br><br>
+        <input class="btn btn-success" type="submit" value="Valider">
 
-        <a class="btn btn-danger" href="{{ route('change_background') }}">Change Background</a>
+        <a class="btn btn-outline-danger" href="{{ route('change_background') }}">Change Background</a>
     </form>
   </div>
     </div>
