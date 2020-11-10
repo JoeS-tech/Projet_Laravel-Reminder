@@ -25,7 +25,6 @@
     .lsh_none {
         margin: 0 !important;
         padding: 0 !important;
-
     }
 
     body {
@@ -34,7 +33,11 @@
         background-size: cover;
         background-position: center;
     }
-
+    .lsh_colCenter {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
     .lsh_editicon {
         width: 30px;
         height: 30px;
@@ -79,11 +82,11 @@
         </form>
         @endif
     </div>
-    <div class="row">
+    <div class="row lsh_center">
         @foreach($columns as $column)
 
-        <div class="col-4">
-            <div class="card lsh_center" style="width: 18rem;">
+        <div class="col-4 lsh_colCenter">
+            <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <div class="row">
                         <div class="col"></div>
@@ -135,12 +138,12 @@
                 @foreach ($cards as $card)
                 @if($card->column_id == $column->id)
                 <div class="border_cards">
-                    <div class="row lsh_none">
+                    <div class="row lsh_none lsh_colCenter">
 
                         <h5 class="lsh_todo"> {{ $card->todo }} </h5>
                     </div>
-                    <div class="row lsh_none">
-                        <div class="col">
+                    <div class="row lsh_none lsh_colCenter">
+                        <div class="col lsh_colCenter">
                             <!-- Small modal -->
                             <input type="image" class="lsh_editicon" data-toggle="modal"
                                 src="../storage/assets/uploads/edit.png" alt="iconEdit"
@@ -159,7 +162,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row lsh_none">
+                        <div class="row lsh_none .lsh_colCenter">
 
                             <form method="POST" class="lsh_none" action="{{ @route('user.delCard', [$column->table_id, $card->id]) }}">
                                 @csrf
