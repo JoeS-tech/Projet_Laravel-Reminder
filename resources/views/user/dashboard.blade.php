@@ -5,7 +5,11 @@
         background-size: cover;
         background-position: center;
     }
-
+    .lsh_colCenter {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
     .lsh_delicon {
         width: 30px;
         border-radius: 50%;
@@ -53,21 +57,21 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row lsh_colCenter">
         @foreach ($tables as $table)
 
-        <div class="col-4">
+        <div class="col-4 lsh_colCenter">
             <div class="card lsh_center" style="width: 18rem;">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col"></div>
-                        <div class="col">
+                    <div class="row lsh_colCenter">
+                        <div class="col lsh_colCenter"></div>
+                        <div class="col lsh_colCenter">
                             <h3 class="card-title">
                                 <a href="{{ @route('user.postit',[$table->id]) }}">{{ $table->title }}</a>
                             </h3>
                             <!-- Small modal for EDIT -->
                         </div>
-                        <div class="col">
+                        <div class="col lsh_colCenter">
                             <input type="image" class="lsh_editicon" data-toggle="modal"
                                 src="../storage/assets/uploads/edit.png" alt="iconDel"
                                 data-target={{ '.modalComment'.$table->id }}>

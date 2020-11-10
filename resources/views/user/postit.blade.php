@@ -93,7 +93,7 @@
                         <div class="col">
                             <h3 class="card-title">{{ $column->title }}</h3>
                         </div>
-                        <div class="col">
+                        <div class="col ">
 
                             <!-- Small modal -->
                             <input type="image" class="lsh_editicon" data-toggle="modal"
