@@ -16,9 +16,15 @@
         width: 30px;
         border-radius: 50%;
     }
-
+    .lsh_todo{
+        margin: 5px;
+    }
+    .lsh_margin{
+        margin:20px;
+    }
     .lsh_none {
-        margin: 0;
+        margin: 0 !important;
+        padding: 0 !important;
 
     }
 
@@ -86,10 +92,10 @@
                         </div>
                         <div class="col">
 
-                                <!-- Small modal -->
-                                <input type="image" class="lsh_editicon" data-toggle="modal"
-                                    src="../storage/assets/uploads/edit.png" alt="iconEdit"
-                                    data-target="{{ '.modalColumn'.$column->id }}">
+                            <!-- Small modal -->
+                            <input type="image" class="lsh_editicon" data-toggle="modal"
+                                src="../storage/assets/uploads/edit.png" alt="iconEdit"
+                                data-target="{{ '.modalColumn'.$column->id }}">
 
 
 
@@ -120,7 +126,7 @@
 
                     <form method="POST" action="{{ @route('user.addCard', [$column->table_id, $column->id]) }}">
                         @csrf
-                        <input type="textarea" name="todo" placeholder="Nouvelle Card">
+                        <input type="textarea" name="todo" placeholder="Nouvelle Todo">
                         <input type="submit" name="card" value="+">
                     </form>
 
@@ -129,34 +135,39 @@
                 @foreach ($cards as $card)
                 @if($card->column_id == $column->id)
                 <div class="border_cards">
-                    <p> {{ $card->todo }} </p>
+                    <div class="row lsh_none">
 
-
-                    <!-- Small modal -->
-                    <input type="image" class="lsh_editicon" data-toggle="modal"
-                        src="../storage/assets/uploads/edit.png" alt="iconEdit"
-                        data-target="{{ '.modalColumn'.$card->id }}">
-                    <div class="modal fade {{ 'modalColumn'.$card->id }}" tabindex="-1" role="dialog"
-                        aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-sm">
-                            <div class="modal-content">
-                                <form method="POST"
-                                    action="{{ @route('user.editCard', [$column->table_id, $card->id]) }}">
-                                    @csrf
-                                    <input type="textarea" name="todo">
-                                    <input type="submit" name="editCard" value="Edit">
-                                </form>
+                        <h5 class="lsh_todo"> {{ $card->todo }} </h5>
+                    </div>
+                    <div class="row lsh_none">
+                        <div class="col">
+                            <!-- Small modal -->
+                            <input type="image" class="lsh_editicon" data-toggle="modal"
+                                src="../storage/assets/uploads/edit.png" alt="iconEdit"
+                                data-target="{{ '.modalColumn'.$card->id }}">
+                            <div class="modal fade {{ 'modalColumn'.$card->id }}" tabindex="-1" role="dialog"
+                                aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <form method="POST"
+                                            action="{{ @route('user.editCard', [$column->table_id, $card->id]) }}">
+                                            @csrf
+                                            <input type="textarea" name="todo">
+                                            <input type="submit" name="editCard" value="Edit">
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <div class="row lsh_none">
+
+                            <form method="POST" class="lsh_none" action="{{ @route('user.delCard', [$column->table_id, $card->id]) }}">
+                                @csrf
+                                <input class="lsh_delicon" type="image" name="delCard" src="../storage/assets/uploads/del.png"
+                                    alt="iconDel">
+                            </form>
+                        </div>
                     </div>
-
-                    <form method="POST" action="{{ @route('user.delCard', [$column->table_id, $card->id]) }}">
-                        @csrf
-                        <input class="lsh_delicon" type="image" name="delCard" src="../storage/assets/uploads/del.png"
-                            alt="iconDel">
-                    </form>
-                    <p> {{ $card->id }} </p>
-
                     <button type="button" class="btn btn-primary" data-toggle="modal"
                         data-target="{{ '.modalComment'.$card->id }}">+</button>
                 </div>
