@@ -1,3 +1,4 @@
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
 <style>
 
@@ -48,7 +49,7 @@ $darkBackground: #5b5f97;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 #login-container h1, h2 {
-  font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Permanent Marker', cursive;
   text-align: center;
   margin-bottom: 20px;
   color: #120491;
@@ -64,18 +65,7 @@ $darkBackground: #5b5f97;
   width: calc(100% - 40px);
   margin: 0 auto;
 }
-#login-container .social a {
-  text-align: center;
-  border: solid 2px #ff6b6c;
-  width: 75px;
-  padding: 5px 0;
-  border-radius: 5px;
-}
-#login-container .social a:hover {
-  background: #ff6b6c;
-  color: white;
-  cursor: pointer;
-}
+
 #login-container button {
   width: 80%;
   height: 80px;
@@ -85,7 +75,7 @@ $darkBackground: #5b5f97;
   border: none;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
-  background: linear-gradient(45deg, #0511477e, #2e4eda, #45caff, #280777);
+  background: linear-gradient(45deg, #0511477e, #002fff, #45caff, #280777);
   background-size: 300% 300%;
   outline: none;
   transition: all 200ms ease-in-out;
@@ -171,6 +161,11 @@ $darkBackground: #5b5f97;
 @extends('layouts.app')
 
 @section('content')
+<?php
+$date = date("d m Y");
+$heure = date("H:i");
+
+?>
 
 <div class="amaury">
     <div id="login-container">
@@ -193,11 +188,11 @@ $darkBackground: #5b5f97;
     <footer>
       <div class="likes">
         <p><i class='fa fa-heart'></i></p>
-        <p>1.5K</p>
+        <p>{{ $date }}</p>
       </div>
       <div class="projects">
-        <p>Projects</p>
-        <p>154</p>
+        <p>{{ $heure }}</p>
+
       </div>
     </footer>
   </div>
@@ -205,37 +200,6 @@ $darkBackground: #5b5f97;
 
 
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
 
 
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                   <h2> Vous êtes connecté en tant que {{ Auth::user()->name }} ! </h2>
-                </div>
-                <div class="card-body">
-                    <span>Pseudo: {{Auth::user()->name}}</span>
-                    <br>
-                    @if(Auth::user()->firstname === NULL)
-                    @else
-                    Prénom: {{Auth::user()->firstname}}
-                    <br>
-                    @endif
-                    <span>Email: {{Auth::user()->email}}</span>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
 @endsection
